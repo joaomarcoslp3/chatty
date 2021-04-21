@@ -1,13 +1,13 @@
 import { getCustomRepository } from "typeorm"
 import { SettingsRepository } from "../repositories/SettingsRepository"
 
-type IsSettingsCreate =  {
+export type SettingsCreation =  {
   chat: boolean
   username: string
 }
 
 class SettingsService {
-  async create({ chat, username }: IsSettingsCreate) {
+  async create({ chat, username }: SettingsCreation) {
     const settingsRepository = getCustomRepository(SettingsRepository)
 
     const userAlreadyExists = await settingsRepository.findOne({ username })

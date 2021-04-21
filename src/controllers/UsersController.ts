@@ -1,9 +1,9 @@
 import { Request, Response } from 'express'
-import { UserService } from '../services/UserService'
+import { UsersCreation, UserService } from '../services/UserService'
 
 class UsersController {
   async create(req: Request, res: Response): Promise<Response> {
-    const { email } = req.body
+    const { email } = req.body as UsersCreation
     const usersService = new UserService()
 
     try {

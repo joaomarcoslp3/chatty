@@ -1,12 +1,12 @@
 import { getCustomRepository } from "typeorm"
 import { UsersRepository } from "../repositories/UsersRepository"
 
-type IsUsersCreate = {
+export type UsersCreation = {
   email: string
 }
 
 class UserService {
-  async create ({email}: IsUsersCreate) {
+  async create ({email}: UsersCreation) {
     const userRepository = getCustomRepository(UsersRepository)
 
     const userAlreadyExists = await userRepository.findOne({ email })
