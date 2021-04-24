@@ -13,6 +13,9 @@ routes.get('/', (req, res) => {
 })
 
 routes.post('/settings', settingsController.create)
+routes.get('/settings/:username', settingsController.findByUsername)
+routes.put('/settings/:username', settingsController.update)
+
 
 routes.post('/users', usersController.create)
 
