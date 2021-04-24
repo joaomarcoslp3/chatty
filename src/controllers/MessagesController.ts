@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { MessagesService, MessageCreation } from '../services/MessagesService'
+import { MessagesService, MessageCreation } from '../services/'
 
 const messageService = new MessagesService()
 
